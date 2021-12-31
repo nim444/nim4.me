@@ -1,0 +1,102 @@
+nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
+    height: 40px !important;
+    line-height: 40px !important;
+}
+
+
+#main-text{
+    margin-top: 5%;
+}
+
+.page-footer {
+    padding-top: 0px !important;
+}
+
+#logo{
+    padding-top:5px ;
+    padding-left: 10px;
+    max-height: 35px;
+}
+
+body{
+    font-family: 'VT323', monospace;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-size : 1.2rem;
+    /*background-image: url(../img/bgnk.png);*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right 0% bottom 7%;
+}
+
+#fontgang{
+    font-family: 'Pirata One', cursive;
+}
+
+#fontt{
+    font-family: 'Roboto', sans-serif;
+}
+main {
+    flex: 1 0 auto;
+  }
+
+.loader {
+    position: absolute;
+    top :0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.preloader-background {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #212121;
+	
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;	
+}
+
+hr.new {
+    border-top: 0.5px dashed grey !important;
+}
+hr {
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 0.5px;
+    border-color: gray !important;
+}
+
+span.badge {
+    font-size: 0.8rem !important;
+}
+
+.sidenav{
+    width: auto !important;
+}
+
+.collection,.collection-item {
+    border: none !important;
+}
+
+.collection {
+    margin: 0.1rem 0 0.1rem 0 !important;
+}
+
+
+.btn-large {
+    border: 1px solid grey !important;
+}

@@ -1,0 +1,61 @@
+{% load static %}
+<!-- [NAVBAR] -->
+<nav>
+        <div class="nav-wrapper black">
+                <a href="{% url 'home' %}" class="brand-logo"><img src="{% static 'app/img/nk.gif' %}" alt="NiM4"
+                                id="logo"></a>
+                <a href="#" data-target="mobile" class="sidenav-trigger"><i
+                                class="material-icons blue-text">menu</i></a>
+                <ul class="right hide-on-med-and-down ">
+                        {% if not user.is_staff %}
+
+                        <li><a class="white-text waves-effect waves-light" href="{% url 'bookmarks' %}" >
+                                 Bookmarks</a></li>
+                        <li><a class="white-text waves-effect waves-light" href="{% url 'playlists' %}" >
+                                 Playlists</a></li>
+                                 <li><a class="white-text waves-effect waves-light" href="{% url 'library:library' %}" >
+                                        Library</a></li>
+                        <li><a class="white-text waves-effect waves-light" href="{% url 'hello' %}" >
+                                 Say Hello!</a></li>
+                        <li><a class="tooltipped waves-effect" href="{% url 'login' %}" data-position="bottom"
+                                      data-tooltip="Login"> <i class="material-icons blue-text">input</i></a></li>
+                        {% else %}
+                        <li><a class="white-text waves-effect waves-light" href="{% url 'library:library' %}" >
+                                 Library</a></li>
+                        <li><a class="white-text waves-effect waves-light" href="{% url 'bookmarks' %}" >
+                                 Bookmarks</a></li>
+                        <li><a class="white-text waves-effect waves-light" href="{% url 'playlists' %}" >
+                                 Playlists</a></li>
+                        <li><a class="white-text waves-effect waves-light" href="{% url 'hello' %}" >
+                                 Say Hello!</a></li>
+
+                        <li><a class="tooltipped waves-effect waves-light" href="{% url 'logout' %}"
+                                        data-position="bottom" data-tooltip="Exit"> <i class="material-icons blue-text">power_settings_new</i></a></li>
+                        {% endif %}
+                </ul>
+        </div>
+</nav>
+
+
+<!-- [MOBNAVBAR] -->
+<ul class="sidenav grey darken-4 white-text" id="mobile">
+        {% if not user.is_staff %}
+        <li><a class="white-text" href="{% url 'home' %}">> Home</a></li>
+        <li><a class="white-text" href="{% url 'bookmarks' %}">> Bookmarks</a></li>
+        <li><a class="white-text" href="{% url 'playlists' %}">> Playlists</a></li>
+        <li><a class="white-text" href="{% url 'library:library' %}">> Library</a></li>
+
+         <li><a class="white-text" href="{% url 'hello' %}">> Say Hello</a></li>
+        <li><a class="white-text" href="{% url 'login' %}">> Log In</a></li>
+        {% else %}
+        <li><a class="white-text" href="{% url 'home' %}">> Home</a></li>
+        <li><a class="white-text" href="{% url 'library:library' %}">> Library</a></li>
+        <li><a class="white-text" href="{% url 'bookmarks' %}">> Bookmarks</a></li>
+        <li><a class="white-text" href="{% url 'playlists' %}">> Playlists</a></li>
+        <li><a class="white-text" href="{% url 'hello' %}">> Say Hello</a></li>
+        <li><a class="white-text" href="{% url 'logout' %}">> Log Out</a></li>
+        {% endif %}
+
+
+</ul>
+<!-- [END NAVBAR] -->

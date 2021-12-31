@@ -1,0 +1,59 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block title %}{{ block.super }} | Library {% endblock %}
+{% block content %}
+
+<main class="">
+
+    <div class="container-v" id='main-text'>
+        <div class="row ">
+
+            <div class="col s12 m10 l8 offset-m1 offset-l2 card black hoverable">
+
+                <div class='col s10 valign-wrapper'>
+
+                    <a href="" class="breadcrumb valign-wrapper" id='fontgang'>{{ object.title}}</a>
+                </div>
+                <div class='col s2'>
+                    <a class="btn-floating btn-small right" href="{% url 'library:library' %}">   <i class="material-icons">arrow_back</i></a>
+                </div>
+
+                <div class="card-content ">
+                    <br>
+                    <br>
+
+                    {% if object %}
+
+
+
+                    <br>
+                    <div class="white-text" id="fontt">
+                         {{ object.body|safe }}
+                    </div>
+
+
+
+
+                    {% else %}
+                    <p class='white-text'> Ops , Nothing here :(</p>
+                    {% endif %}
+                    <br>
+
+
+
+
+                    <hr class='new'>
+                    <div class="center">
+                        <span class='center grey-text'>
+
+                            <span class='' >Publish at {{object.date|date:"M Y"}}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+{% endblock %}

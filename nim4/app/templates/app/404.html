@@ -1,0 +1,39 @@
+{% extends 'app/base.html' %}
+{% block title %}{{ block.super }} | 404 {% endblock %}
+
+{% block content %}
+
+
+<!-- [Land] -->
+<main class="valign-wrapper">
+    <div class="container">
+        <div class="row center">
+            <div class="col s10 m6 l6 offset-s1 offset-m3 offset-l3 card black hoverable" id="main-text">
+                <!-- <h2 class="white-text">Welcome to my hood !</h2> -->
+
+                <div class="card-content ">
+                <br>
+                    <h4 class="card-title white-text" id='fontgang'>Page Not Found</h4>
+                    <p class="white-text center"> OPS , 404 ...</p>
+                    <br>
+                    <div class='col s12 center'>
+             <a href="{% url 'home' %}" class="btn black blue-text" id="fontt">> RETURN HOME</a>
+            </div>
+            <br>
+            <br>
+                </div>
+            </div>
+            
+            
+        </div>
+
+       
+
+    </div>
+
+
+
+
+</main>
+
+{% endblock content %}

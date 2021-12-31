@@ -1,0 +1,86 @@
+{% extends 'app/base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block title %}{{ block.super }} | Playlists {% endblock %}
+{% block content %}
+
+<main class="">
+
+    <div class="container-v" id='main-text'>
+        <div class="row ">
+
+            <div class="col s12 m10 l6 offset-m1 offset-l3 card black hoverable">
+                <!-- <h2 class="white-text">Welcome to my hood !</h2> -->
+
+                <div class='col s6 valign-wrapper'>
+                    <a href="{% url 'home' %}" class="breadcrumb valign-wrapper" id='fontgang'> Home</a>
+                    <a href="{% url 'playlists' %}" class="breadcrumb valign-wrapper" id='fontgang'>Playlists</a>
+                </div>
+                <div class='col s6'>
+                    <form action="{% url 'searchplaylists' %}" method="get">
+                        <input name="q" type="text" placeholder="🔍" class='grey-text'>
+                    </form>
+                </div>
+
+                <div class="card-content ">
+                    <br>
+                    <br>
+
+                    {% if playlists_list %}
+
+                        {% for play in playlists_list %}
+
+
+
+
+                        <a href='{{ play.link }}' target="_blank">
+                            <p class="grey-text"><span style="font-size: larger;">+ {{ play.title}}<span
+                                        class='right badge '>{{play.date|date:"M Y"}}</span></p>
+                        </a> 
+
+                        {% endfor %}
+
+                    {% else %}
+                    <p class='white-text'> Ops , Nothing here :(</p>
+                    {% endif %}
+                    <br>
+
+                    <!-- 
+                    <span class='grey-text'>Tags:</span>
+
+                    {% for tag in tags %}
+                    <a class="" href="{% url 'tagged' tag.slug %}">{{ tag.name }}</a>
+
+                    {% empty %}
+                    No Tags :)
+                    {% endfor %}
+                    -->
+
+                    <hr class='new'>
+                    <div class="center">
+                        <span class='center grey-text'>
+                            {% if page_obj.has_previous %}
+                            <a href="?page=1">&laquo; first</a>
+                            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                            {% endif %}
+
+                            <span class="current">
+                                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                            </span>
+
+                            {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}">next</a>
+                            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                            {% endif %}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+<!-- Float Button -->
+
+
+{% endblock %}

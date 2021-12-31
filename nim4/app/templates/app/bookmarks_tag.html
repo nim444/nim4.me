@@ -1,0 +1,48 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block title %}{{ block.super }} | Tags {% endblock %}
+{% block content %}
+
+<main class="">
+    <div class="container-v" id='main-text'>
+        <div class="row ">
+            <div class="col s12 m6 l6 offset-m3 offset-l3 card black hoverable">
+
+                <div class="card-content ">
+                   <a href="{% url 'bookmarks' %}" class="btn-floating halfway-fab waves-effect waves-light grey darken-4 left"><i class="material-icons">arrow_back</i></a>
+                    {% for book in bookmarks %}
+                    <a href='{{ book.link }}' target="_blank">
+                        <p class="grey-text"><span style="font-size: larger;">+ {{ book.title}}<span
+                                    class='right badge'>{{book.date|date:"M Y"}}</span></p>
+                    </a>
+
+
+                    
+                    {% endfor %}
+                    <hr>
+
+                    <div class="center">
+                        <span class='center grey-text'>
+                            {% if page_obj.has_previous %}
+                            <a href="?page=1">&laquo; first</a>
+                            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                            {% endif %}
+
+                            <span class="current">
+                                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                            </span>
+
+                            {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}">next</a>
+                            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                            {% endif %}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

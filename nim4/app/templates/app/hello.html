@@ -1,0 +1,121 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+
+<!-- [Land] -->
+<main class="valign-wrapper">
+    <div class="container">
+
+
+        <div class="row center">
+
+            <div class="col s10 m8 l6 offset-s1 offset-m2 offset-l3 card black hoverable" id="main-text">
+
+                <div class="card-content ">
+                 <span class="card-title white-text" id="fontgang">leave your message </span>
+                <br>
+                    <div class="row">
+
+                        <form class="col s12" method="POST"  onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have check checkbox befor submit'); return false; }">
+                        {% csrf_token %}
+                          <div class="row">
+                            <div class="input-field col s6">
+                              <i class="material-icons prefix blue-text">account_circle</i>
+                              <input id="full_name" type="text" class="validate white-text" name="full_name" required>
+                              <label for="full_name">First Name</label>
+                            </div>
+                            <div class="input-field col s6">
+                              <i class="material-icons prefix blue-text">phone</i>
+                              <input id="phone" type="number" class="validate white-text" name="phone" required>
+                              <label for="phone">Telephone</label>
+                            </div>
+
+                              <div class="input-field col s12">
+                              <i class="material-icons prefix blue-text">mail</i>
+                              <input id="email" type="email" class="validate white-text" name="email" required>
+                              <label for="email">Email</label>
+                            </div>
+                               <div class="input-field col s12">
+                                    <i class="material-icons prefix blue-text">message</i>
+                                  <textarea id="message" class="materialize-textarea white-text" name="message" required></textarea>
+                                  <label for="message">Message</label>
+                               </div>
+
+
+                               <div class="input-field col s12">
+
+                                   <label><input class="checkbox" type="checkbox" name="checkbox" value="check" id="agree"  /> <span class="grey-text">
+                                   Check this out ;)
+                                   </span>
+                                   <br></label>
+
+                               </div>
+
+                              <div class="input-field col s12">
+                                  <br>
+                                  <br>
+                                  <br>
+                                   <input type="submit" name="submit" value="> SUBMIT" class="btn" id="fontgang">
+                              </div>
+
+
+                          </div>
+                        </form>
+                      </div>
+
+<!--                    END FORM-->
+                {% for message in messages %}
+                    {% if message.tags == 'success' %}
+                    <div class='row '>
+                        <div class='col s12  center'>
+
+                            <div class="chip green white-text">
+                                Your message has been submitted
+                                <i class="close material-icons">close</i>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    {% else %}
+                    {% endif %}
+                {% endfor %}
+
+                    
+                </div>
+            </div>
+
+             <div class="col s12">
+                                <h5 class='grey-text center' id='fontt'>
+                                    <span class="devicons devicons-git tooltipped" data-position="top"
+                                        data-tooltip="GIT, CI"></span>
+                                    <span class="devicons devicons-python tooltipped" data-position="top"
+                                        data-tooltip="OOP,GUI"></span>
+                                    <span class="devicons devicons-django tooltipped" data-position="top"
+                                        data-tooltip="MVT,DRF,Celery,Gunicorn,WSGI"></span>
+                                    <span class="devicons devicons-materializecss tooltipped" data-position="top"
+                                        data-tooltip="Materialize,Sass,Js script"></span>
+                                    <span class="devicons devicons-ubuntu tooltipped" data-position="top"
+                                        data-tooltip="bash,ssh"></span>
+                                    <span class="devicons devicons-database tooltipped" data-position="top"
+                                        data-tooltip="PostgreSQL,Sqlite"></span>
+                                    <span class="devicons devicons-aws tooltipped" data-position="top"
+                                        data-tooltip="DevOps,EC2 aws"></span>
+                                    <span class="devicons devicons-terminal tooltipped" data-position="top"
+                                        data-tooltip="Nginx,Docker"></span>
+                                    <span class="devicons devicons-illustrator tooltipped" data-position="top"
+                                        data-tooltip="Illustration / Vector"></span>
+                                    <span class="devicons devicons-photoshop tooltipped" data-position="top"
+                                        data-tooltip="All kind of designs"></span>
+                                    <span class="devicons devicons-trello tooltipped" data-position="top"
+                                        data-tooltip="+Monday task Management"></span>
+                                </h5>
+                            </div>
+        </div>
+    </div>
+</main>
+
+
+
+{% endblock content %}

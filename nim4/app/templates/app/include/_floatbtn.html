@@ -1,0 +1,16 @@
+{% load static %}
+<!-- [Floating BTN] -->
+    <div class="fixed-action-btn" >
+        <a class="btn-floating btn-large black">
+            <i class="large material-icons blue-text">apps</i>
+        </a>
+        <ul>
+            {% if not user.is_staff %}
+            {% endif %}
+            {% if user.is_staff %}
+            <li><a class="btn-floating grey darken-1" href="{% url 'logout' %}"><i class="material-icons">power_settings_new</i></a></li>
+            {% endif %}
+            <li><a class="btn-floating grey darken-2" href="{% url 'bookmarks' %}"><i class="material-icons">bookmark</i></a></li>
+            <li><a class="btn-floating grey darken-3" href="{% url 'home' %}" ><i class="material-icons">home</i></a></li>
+        </ul>
+    </div>

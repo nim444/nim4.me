@@ -1,0 +1,72 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+{% block title %}{{ block.super }} | Personal {% endblock %}
+{% block content %}
+
+<div class="black">
+
+    <div class="container-v" id='main-text'>
+        <div class="row ">
+
+            <div class="col s12 m10 l8 offset-m1 offset-l2 card white hoverable">
+                <!-- <h2 class="white-text">Welcome to my hood !</h2> -->
+
+                <div class='col s12 valign-wrapper black'>
+                    <a href="{% url 'home' %}" class="breadcrumb valign-wrapper" id='fontgang'> Home</a>
+                    <a href="{% url 'personal' %}" class="breadcrumb valign-wrapper" id='fontgang'>Personal Page</a>
+                    <a href="{% url 'personal' %}" class=" valign-wrapper right" id='fontgang'><i
+                            class="material-icons white-text right">file_download</i></a>
+
+                </div>
+
+
+                <div class="card-content ">
+
+                    <div class="row">
+                        <div class='col s12 Cennter'>
+                            <br>
+                            <hr>
+                            <br>
+
+                        </div>
+
+
+                          <div class="col s12">
+                                <h5 class='grey-text center' id='fontt'>
+                                    <span class="devicons devicons-git tooltipped" data-position="top"
+                                        data-tooltip="GIT, CI"></span>
+                                    <span class="devicons devicons-python tooltipped" data-position="top"
+                                        data-tooltip="OOP,GUI"></span>
+                                    <span class="devicons devicons-django tooltipped" data-position="top"
+                                        data-tooltip="MVT,DRF,Celery,Gunicorn,WSGI"></span>
+                                    <span class="devicons devicons-materializecss tooltipped" data-position="top"
+                                        data-tooltip="Materialize,Sass,Js script"></span>
+                                    <span class="devicons devicons-ubuntu tooltipped" data-position="top"
+                                        data-tooltip="bash,ssh"></span>
+                                    <span class="devicons devicons-database tooltipped" data-position="top"
+                                        data-tooltip="PostgreSQL,Sqlite"></span>
+                                    <span class="devicons devicons-aws tooltipped" data-position="top"
+                                        data-tooltip="DevOps,EC2 aws"></span>
+                                    <span class="devicons devicons-terminal tooltipped" data-position="top"
+                                        data-tooltip="Nginx,Docker"></span>
+                                    <span class="devicons devicons-illustrator tooltipped" data-position="top"
+                                        data-tooltip="Illustration / Vector"></span>
+                                    <span class="devicons devicons-photoshop tooltipped" data-position="top"
+                                        data-tooltip="All kind of designs"></span>
+                                    <span class="devicons devicons-trello tooltipped" data-position="top"
+                                        data-tooltip="+Monday task Management"></span>
+                                </h5>
+                            </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+</div>
+<!-- Float Button -->
+
+{% endblock %}
+{% block footer %}{% endblock %}
