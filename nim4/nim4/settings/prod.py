@@ -9,7 +9,7 @@ config.read(secret_file)
 
 
 SECRET_KEY = config.get('Secret','secret')
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['nim4.me','www.nim4.me',"*"]
 
 DATABASES = {
