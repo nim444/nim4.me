@@ -30,4 +30,4 @@ jobs:
         pip install -r nim4/requariments.txt
     - name: Run Tests
       run: |
-        python manage.py test
+        python nim4/manage.py test
