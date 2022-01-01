@@ -1,5 +1,7 @@
 ### https://NIM4.me
 `Update @ Jan 2022`<br>
+[![Django CI](https://github.com/nim444/nim4.me/actions/workflows/django.yml/badge.svg)](https://github.com/nim444/nim4.me/actions/workflows/django.yml) 
+<br>
 
 
 
@@ -26,6 +28,7 @@ ___
 | HTML, JS. CSS Minify | ------ | Nginx        |
 | Dev . Prod Staging   | ------ | PostgreSQL   |
 | Google Analytics     | ------ |--------------+
+| Django CI            | ------ | 
 | Configparser         |_______/ 
 ```
 
@@ -33,6 +36,8 @@ ___
 ### Project Tree
 .                                               # Project root 
 ├── LICENSE                                     # MIT License
+├── .github                                     # Github actions
+│   ├── workflows                               # Django CI action     
 ├── nim4                                        # Django Project
 │   ├── api                                     # ------- API App *
 │   │   ├── apps.py                             # API AppConfig
