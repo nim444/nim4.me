@@ -23,9 +23,10 @@ ___
 | RestAPI Endpoint     | ------ | Python  +3.6 |
 | Import , Export      | ------ | Django  +3.0 |
 | WYSIWYG Text Editor  | ------ | Gunicorn     |
-| HTML, JS. CSS Minify | ------ | CertBOT      |
+| HTML, JS. CSS Minify | ------ | Nginx        |
 | Dev . Prod Staging   | ------ | PostgreSQL   |
-| Google Analytics     | ------ | Nginx        |
+| Google Analytics     | ------ |--------------+
+| Configparser         |_______/ 
 ```
 
 ```
