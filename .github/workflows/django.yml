@@ -24,9 +24,6 @@ jobs:
     - name: Directory Check
       run: |
         ls -la
-    - name: Dummy Secret
-      run: |
-        touch nim4/nim4/settings/.secret
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
