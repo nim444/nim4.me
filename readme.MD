@@ -13,9 +13,10 @@
 
 
 
-![Image](.readme/capture.gif)<br>
+![Image](.readme/capture.gif)
 ![Image](.readme/capture2.gif)<br>
 ![Image](.readme/capture3.gif)
+![Image](.readme/capture4.gif)<br>
 
 
 ___
