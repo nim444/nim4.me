@@ -39,29 +39,43 @@
 		<main>
 			<div class="content">
 				<canvas class="scene scene--full" id="scene"></canvas>
-				<div class="card transparent">
-					<div class="card-content ">
+				<div class="transparent">
+					<div class="">
 
 						<div class=" hide-on-small-and-down center">
-							<h1 class="white-text" id='fontgang'> Technology Geek 🍀</h1>
+                            <h1 class="white-text" id='fontgang'>Nima Karimi </h1>
+                                <h4 class="grey-text" id='' style="padding-top: -10;">Software engineer</h4>
+                        <br>
+                        <br>
+
 						</div>
 						 <div class=" hide-on-med-and-up center">
-						    <h3 class="white-text center" id='fontgang'> Technology Geek 🍀</h3>
+						    <h3 class="white-text" id=''> Nima Karimi</h3>
            				 </div>
 
 
-						<div class='col s12 center'>
+						<div class='col s12 center card transparent'>
 
 
 
                                     {% if not user.is_staff %}
+                                    <a href="{% url 'library:library' %}"> <img src="{% static 'app/img/library-btn.png' %}" alt="LIBRARY"
+                                    style="padding-top:5px ;"></a>
+                                    <a href="{% url 'hello' %}" ><img src="{% static 'app/img/contact-btn.png' %}" alt="CONTACT"
+                                    id="logo" style="padding-left:25px ;"></a><br>                                
 
-                                    <a class="btn  grey darken-4 white-text waves-effect waves-light hoverable" id="btnhome" href="{% url 'bookmarks' %}" >
-                                                     > Bookmarks</a>
-                                    <a class="btn  grey darken-4 white-text waves-effect waves-light hoverable btnhome" href="{% url 'playlists' %}" >
-                                                     > Playlists</a>
-                                    <a class="btn grey darken-4 white-text waves-effect waves-light  hoverable" href="{% url 'library:library' %}" >
-                                    > Library</a>
+
+                                <a href="{% url 'playlists' %}"><img src="{% static 'app/img/playlist-btn.png' %}" alt="PLAYLIST"
+                                style="padding-top:5px ;"></a>
+                                <a href="{% url 'bookmarks' %}"><img src="{% static 'app/img/bookmarks-btn.png' %}" alt="BOOKMARKS"
+                                style="padding-left:25px ;"></a><br>
+
+
+
+                                <a href="https://www.linkedin.com/in/nim4" target="_blank"><img src="{% static 'app/img/linkedin-btn.png' %}" alt="Linkedin"
+                                    style="padding-top:5px ;" ></a>
+                                   <a href="https://github.com/nim444" target="_blank"><img src="{% static 'app/img/github-btn.png' %}" alt="GITHUB"
+                                    style="padding-left:25px ;"></a><br>
 
                                     {% else %}
                                     <a class="btn grey darken-4 white-text waves-effect waves-light" href="{% url 'library:library' %}" >
